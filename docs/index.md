@@ -7,7 +7,32 @@ permalink: /
 ---
 
 
-# Course Catalog
+
+# 介绍
+
+---
+
+Welcome to CS 61A！ 
+
+在本课程中，你将编写代码，但编写代码只是课程的一部分。更重要的是，本课程将教你如何进行计算思维——即如何以系统化、定量化和逻辑化的方式来分析问题并解决问题。无论你是只参加这门课程，还是计划之后参加更多课程成为一名软件工程师，编写代码都有许多用途。
+
+## 关于本笔记
+
+Berkeley CS61A 课程的电子书已经非常详尽地涵盖了大部分理论内容。因此，在我的笔记中，我将主要关注那些电子书中未包含的部分，例如电子书中不涉及的课程视频记录以及如何结合电子书观看视频。为了优化学习体验，我会提供一些指引，比如推荐书籍的某一节与对应的视频课程相结合的学习方法，你可以选择先阅读书籍再观看视频，或者反之。请注意，我的笔记将不会详尽复述书中的内容，而是侧重于提供一些电子书上没有涵盖的信息、简要的PPT描述，或是对课程的精简总结。希望这种方式能帮助你更有效地掌握 CS61A 的课程内容。
+
+## 相关资源
+
+- [Spring 2023 课程官网](https://inst.eecs.berkeley.edu/~cs61a/sp23/)
+- [Spring 2020 课程官网](https://inst.eecs.berkeley.edu/~cs61a/sp20/)
+- [Composing Programs 中文版](https://composingprograms.netlify.app/)
+- [UCB CS 61A: Computer Programs, Spring 2023 视频 Bilibili](https://www.bilibili.com/video/BV1s3411G7yM/)
+- 相关介绍
+  - [CS61A - CS自学指南](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/Python/CS61A/)
+  - [CS61A - HackWay技术学习路线](https://hackway.org/docs/cs/freshman/first/cs61a)
+
+---
+
+# 目录
 
 - Lecture 1. Computer Science
   - Lab 0. Setup
