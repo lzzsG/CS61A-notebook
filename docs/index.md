@@ -1,0 +1,109 @@
+---
+layout: post
+title: UCB CS 61A
+nav_order: 0
+description: "YourHomeDescription"
+permalink: /
+---
+
+
+# Course Catalog
+
+- Lecture 1. Computer Science
+  - Lab 0. Setup
+- Lecture 2. Functions
+  - Lecture 2. Q&A
+  - Homework 1. Hints
+- Lecture 3. Control
+  - Lecture 3. Q&A
+- Lecture 4. Higher-Order Functions
+  - Lecture 4 Q&A
+  - Project 1. Hog Hint
+- Lecture 5. Environments
+  - Lecture 5. Q&A
+  - Lab 2. Lambda Expression
+  - Lab 2. Multiple Environment
+- Lecture 6. Design
+- Lecture 6. Q&A
+- Lecture 7. Function Examples
+- Lecture 7. Q&A
+- Lecture 8. Recursion
+- Lecture 8. Q&A
+- Lecture 9. Tree Recursion
+- Lecture 9. Q&A
+- Homework 2. Recursion Hint
+- Lecture 10. Containers
+- Lecture 10. Q&A
+- Lecture 11. Data Abstraction
+- Lecture 11. Q&A
+- Project 2. Cats Hint
+- Lecture 12. Trees
+- Lecture 12. Q&A
+- Lecture 13. Binary Numbers
+- Lecture 13. Q&A
+- Lecture 14. Circuits
+- Lecture 14. Q&A
+- Lecture 15. Mutable Values
+- Lecture 15. Q&A
+- Homework 3. Trees, Data Abstraction Hint
+- Lecture 16. Mutable Functions
+- Lecture 16. Q&A
+- Lecture 17. Iterations
+- Lecture 17. Q&A
+- Lecture 18. Objects
+- Lecture 18. Q&A
+- Homework 4. Nonlocal, Iterators Hint
+- Lecture 19. Inheritance
+- Lecture 19. Q&A
+- Project 3. Ants Hint
+- Lecture 20. Representation
+- Lecture 20. Q&A
+- Lecture 21. Composition
+- Lecture 21. Q&A
+- Homework 5. OOP, Linked List, Trees Hint
+- Lecture 22. Efficiency
+- Lecture 22. Q&A
+- Lecture 23. Decomposition
+- Lecture 23. Q&A
+- Lecture 24. Data Example
+- Lecture 24. Q&A
+- Lecture 25. Users
+- Lecture 25. Q&A
+- Lecture 26. Ethical AI & Data
+- Lecture 27. Scheme
+- Lecture 27. Q&A
+- Homework 6. Scheme Hint
+- Lecture 28. Exception
+- Lecture 28. Q&A
+- Lecture 29. Calculater
+- Lecture 29. Q&A
+- Homework 7. Scheme Lists Hint
+- Lecture 30. Interpreters
+- Lecture 30. Q&A
+- Lab 11. Interpreters REPL
+- Lecture 31. Declarative Programming
+- Lecture 31. Q&A
+- Homework 8. More Scheme Hint
+- Lecture 32. Tables
+- Lecture 32. Q&A
+- Lecture 33. Aggregation
+- Lecture 33. Q&A
+- Lecture 34. Database
+- Lecture 34. Q&A
+- Homework 9. SQL Hint
+- Lecture 35. Tail Calls
+- Lecture 35. Q&A
+- Lecture 36. Macros
+- Lecture 36. Q&A
+- Lecture 37. Final Example
+- Lecture 37. Q&A
+- Lecture 38, Conclusion
+- Lecture 38, Q&A
+- Final Review 1. Iterators Generators
+- Final Review 2. Tree Recursion
+- Final Review 3. Trees
+- Final Review 4. OOP
+- Final Review 5. SQL
+- Final Review 6. Mutable Functions and Operators
+- Final Review 7. Scheme
+- Final Review 8. Linked Lists
