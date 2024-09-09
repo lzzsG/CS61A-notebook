@@ -3,7 +3,6 @@ layout: page
 title: Lecture 4. Higher-Order Functions
 permalink: /Lec04/
 nav_order: 4
-has_children: true
 
 
 
