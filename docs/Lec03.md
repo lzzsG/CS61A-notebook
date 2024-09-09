@@ -3,7 +3,7 @@ layout: page
 title: Lecture 3. Control
 permalink: /Lec03/
 nav_order: 3
-
+parent: old
 
 ---
 

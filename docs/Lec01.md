@@ -3,6 +3,7 @@ layout: page
 title: Lecture 1. Computer Science
 permalink: /Lec01/
 nav_order: 1
+parent: old
 ---
 
 # Lecture 1. Computer Science
