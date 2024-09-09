@@ -13,6 +13,8 @@ nav_order: 3
 
 # Lecture 3. Control
 
+**Textbook** **Ch. 1.3 Ch. 1.4 Ch. 1.5**
+
 ## 公告
 
 ### 实验（Lab）截止日期
