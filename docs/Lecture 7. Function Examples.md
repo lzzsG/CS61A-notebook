@@ -231,7 +231,7 @@ def mystery2(n):
 
 ## 分析环境图与代码推导
 
-![QQ_1726017219831]({{ site.baseurl }}/docs/assets/QQ_1726017219831.png)
+![QQ_1726017219831]({{ site.baseurl }}/docs/assets/QQ_1726017219831.png) 
 
 根据环境图，我们需要推导出 `flip` 和 `flop` 函数的行为。以下是对每一帧的逐步分析，帮助我们理解代码是如何构造的。
 
@@ -436,5 +436,78 @@ def remove(n, digit):
 
 
 
+## 函数装饰器（Function Decorators）
 
+在 Python 中，**函数装饰器**是一种简洁且强大的语法，用于修改或扩展函数的行为。装饰器本质上是一个接受函数作为参数的函数，并返回一个新的函数（或者返回经过修改的原函数）。装饰器常用于在不改变函数内部代码的情况下增强函数的功能，例如添加日志记录、性能计时、权限验证等功能。
+
+### 装饰器的工作原理
+
+在图片的演示中，我们可以看到以下两种等效的代码方式：
+
+#### 1. 使用装饰器语法的方式
+
+```python
+@trace1
+def triple(x):
+    return 3 * x
+```
+
+这里的 `@trace1` 是一个装饰器，直接放在 `triple` 函数的定义上方。它的作用是将 `triple` 函数传递给装饰器 `trace1` 进行处理，`trace1` 可以修改或增强 `triple` 的行为，并返回一个新的函数，最后该新的函数替代原来的 `triple`。
+
+#### 2. 等效的传统方式
+
+```python
+def triple(x):
+    return 3 * x
+
+triple = trace1(triple)
+```
+
+这段代码手动将 `triple` 函数传递给装饰器 `trace1`，并将 `trace1` 的返回值重新赋给 `triple`。这样，`triple` 函数实际上已经被 `trace1` 装饰器处理过，之后对 `triple` 的调用会执行装饰器中的逻辑。
+
+### 两种方式等效
+
+这两种写法是等效的。第一种方法使用了装饰器语法糖（syntactic sugar），更简洁直观。而第二种方式则是显式地调用装饰器函数，将其应用于目标函数。
+
+### 为什么使用装饰器？
+
+**装饰器语法**（`@decorator`）提供了许多优点：
+- **代码更简洁**：装饰器可以在函数声明时直接应用，避免在每次函数定义后手动调用装饰器函数。
+- **功能增强**：装饰器可以在不修改原函数的情况下，轻松添加新功能，比如记录函数调用日志、计算执行时间、权限验证等。
+- **可复用**：装饰器可以非常灵活地复用于多个函数，不必每次重复编写相同的增强逻辑。
+
+### 装饰器的实际应用
+
+一个简单的装饰器示例可能是记录函数的调用过程：
+
+```python
+def trace1(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling {func.__name__} with {args} and {kwargs}")
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} returned {result}")
+        return result
+    return wrapper
+
+@trace1
+def triple(x):
+    return 3 * x
+
+# 调用 triple(5)
+triple(5)
+```
+
+**输出结果：**
+```
+Calling triple with (5,) and {}
+triple returned 15
+```
+
+在这个例子中，`trace1` 装饰器将 `triple` 函数包裹在 `wrapper` 函数中。每次调用 `triple(5)` 时，装饰器会首先打印调用信息，然后调用原始的 `triple` 函数，最后打印返回值。
+
+### 总结
+
+- **装饰器语法**（`@decorator`）使得代码更加简洁和直观。
+- 通过使用装饰器，开发者可以轻松地为函数添加额外的功能，而无需更改函数的内部实现。
+- 装饰器广泛用于日志记录、权限管理、性能监控等场景。
 
