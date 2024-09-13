@@ -391,6 +391,8 @@ nav_order: 13
   - 真值表：
     
     <img src="{{ site.baseurl }}/docs/assets/image-20240912164731707.png" alt="image-20240912164731707" style="zoom:50%;" />
+    
+    
 
 布尔运算是一种简单的计算形式，输入是布尔变量（True/False 或 0/1），输出也是布尔变量。这些运算构成了计算机处理逻辑判断的基础。
 
