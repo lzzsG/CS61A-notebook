@@ -1,7 +1,18 @@
+---
+layout: page
+title: L18 Objects
+permalink: /L18
+description: "Lecture 18. Objects"
+nav_order: 18
+
+
+
+---
+
 # Lecture 18. Objects
 
 ## Announcements
-- **作业三**：今天截止提交。
+- **作业三**：今天截止提交18。
 - **Hog 项目修改**：可以在明天前修改，找回因组合评分丢失的分数。提交方法为：
   ```bash
   python3 --revise
