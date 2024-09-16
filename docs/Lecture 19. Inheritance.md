@@ -1,3 +1,15 @@
+---
+layout: page
+title: L19 Inheritance
+permalink: /L19
+description: "Lecture 19. Inheritance"
+nav_order: 19
+
+
+
+
+---
+
 # Lecture 19. Inheritance
 
 ## Announcements
