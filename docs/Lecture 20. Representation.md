@@ -1,3 +1,16 @@
+---
+layout: page
+title: L20 Representation
+permalink: /L20
+description: "Lecture 20. Representation"
+nav_order: 20
+
+
+
+
+
+---
+
 # Lecture 20. Representation
 
 ## Announcements
