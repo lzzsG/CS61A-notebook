@@ -385,6 +385,42 @@ print(t)
     1
 ```
 
+> ```python
+> self.branches = branches if branches is not None else []
+> ```
+>
+> 这行代码使用了 Python 中的**三元运算符**（也称为**条件表达式**），它的结构是：
+> ```python
+> <值1> if <条件> else <值2>
+> ```
+> - **`<条件>`**：条件表达式 `branches is not None` 检查变量 `branches` 是否不是 `None`。
+> - **`<值1>`**：如果条件为真（即 `branches` 不是 `None`），则 `self.branches` 被赋值为 `branches`。
+> - **`<值2>`**：如果条件为假（即 `branches` 是 `None`），则 `self.branches` 被赋值为空列表 `[]`。
+>
+> ### 场景说明：
+> - 在某些情况下，构造函数或方法可能允许 `branches` 参数为空。如果 `branches` 参数被传入时为 `None`，这行代码确保 `self.branches` 仍然会被赋予一个有效的默认值，即空列表 `[]`，避免出现 `NoneType` 类型的错误。
+> - 如果 `branches` 传递了一个有效的值（比如一个列表），那这个值就会直接赋给 `self.branches`。
+>
+> ### 示例：
+>
+> ```python
+> class Tree:
+>     def __init__(self, branches=None):
+>         # 设置分支，branches 是 None 时，self.branches 会变成一个空列表
+>         self.branches = branches if branches is not None else []
+> 
+> # 示例 1: 没有传递 branches 参数
+> tree1 = Tree()
+> print(tree1.branches)  # 输出：[]
+> 
+> # 示例 2: 传递了 branches 参数
+> tree2 = Tree(branches=[1, 2, 3])
+> print(tree2.branches)  # 输出：[1, 2, 3]
+> ```
+>
+
+
+
 ## 树的递归处理
 
 与链表类似，树的递归性质使得树的处理也适合通过递归方式进行。我们可以编写函数来计算树的叶节点、树的高度等。
