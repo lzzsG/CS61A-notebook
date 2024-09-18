@@ -1,8 +1,8 @@
 ---
 layout: page
-title: L14 Circuits
+title: L14 Circuits (optional) 
 permalink: /L14
-description: "Lecture 14. Circuits"
+description: "Lecture 14. Circuits (optional) "
 nav_order: 14
 
 
@@ -14,7 +14,7 @@ nav_order: 14
 
 ---
 
-# Lecture 14. Circuits
+# Lecture 14. Circuits (optional) 
 
 ## Announcements
 

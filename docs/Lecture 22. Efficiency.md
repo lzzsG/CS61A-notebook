@@ -1,15 +1,15 @@
 ---
 layout: page
-title: L22 Efficiency
+title: L22 Efficiency (optional) 
 permalink: /L22
-description: "Lecture 22. Efficiency"
+description: "Lecture 22. Efficiency (optional) "
 nav_order: 22
 
 
 
 ---
 
-# Lecture 22. Efficiency
+# Lecture 22. Efficiency (optional) 
 
 ## Announcements
 

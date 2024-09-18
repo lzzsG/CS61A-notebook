@@ -1,8 +1,8 @@
 ---
 layout: page
-title: L13 Binary Numbers
+title: L13 Binary Numbers (optional) 
 permalink: /L13
-description: "Lecture 13. Binary Numbers"
+description: "Lecture 13. Binary Numbers (optional) "
 nav_order: 13
 
 
