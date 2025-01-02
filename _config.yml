@@ -19,20 +19,20 @@
 # in the templates via {{ site.myvariable }}.
 
 title: "CS 61A Notebook"
-email: lizizhi122@gmail.com
+email: lzzs122@foxmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  CS 61A: Structure and Interpretation of Computer Programs 计算机程序的构造和解释。在本课程中，你将编写代码，但编写代码只是课程的一部分。更重要的是，本课程将教你如何进行计算思维——即如何以系统化、定量化和逻辑化的方式来分析问题并解决问题。无论你是只参加这门课程，还是计划之后参加更多课程成为一名软件工程师，编写代码都有许多用途。
 baseurl: "/CS61A-notebook" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://lzzs.fun" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  LzzsG
+lang: zh-CN
 
 # Build settings
 theme: just-the-docs
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -94,8 +94,8 @@ search:
 aux_links:
   "Home":
     - "//lzzs.fun"
-  "Blog":
-  - "//lzzs.fun/zh/blog"
+  "Notes":
+  - "//lzzs.fun/notebooks"
   "GitHub":
   - "//github.com/lzzsG/CS61A-notebook"
 

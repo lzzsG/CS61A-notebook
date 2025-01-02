@@ -2,7 +2,7 @@
 layout: page
 title: L10 Containers
 permalink: /L10
-description: "Lecture 10. Containers"
+description: "Lecture 10. Containers 本节课程将介绍如何给多个值命名，并使用容器将它们打包在一起。此外，还会讲解字符串的相关内容，因为它们本质上是包含字母的容器。"
 nav_order: 10
 
 
@@ -19,7 +19,7 @@ nav_order: 10
 2. **作业与实验**：
    - **作业2**：作业2的截止时间是**周四**。请按时提交作业。
    - **实验**：本周有实验安排，实验在**周二**截止。建议大家在**周一**完成实验，如果有任何问题，可以参加**周一**的实验指导。
-   
+
 3. **完全可选的Hog策略竞赛**：
    - Hog策略竞赛将在**周一**结束。到目前为止，已经有112个提交。虽然目前有四名选手并列第一名，但往往会有同学在最后一刻提交最优的策略。
    - 欢迎大家继续参加，尽早提交可以查看你在竞赛排行榜中的排名情况。
@@ -28,8 +28,6 @@ nav_order: 10
    - **讨论课和辅导课**：将在**周三**进行。
    - **考试准备环节**：安排在**周五**，这将帮助大家复习并准备未来的考试。
    - **问答环节**：将在**周一、周三和周五**的早上进行，通过Zoom与授课教师进行交流。
-
-
 
 ## 本次课程内容概述
 
@@ -44,6 +42,7 @@ nav_order: 10
 列表是 Python 中的内置数据类型之一，专门用于存储一系列的值。这些值可以通过列表字面量（list literals）创建，并通过赋值语句将其绑定到变量名。列表中的元素可以通过索引进行访问，索引从 0 开始。
 
 - **示例**：
+
   ```python
   odds = [1, 3, 5, 7]  # 创建一个包含奇数的列表
   print(odds[0])  # 输出列表的第一个元素，结果为 1
@@ -54,6 +53,7 @@ nav_order: 10
 可以使用内置的 `len()` 函数来获取列表的长度。该函数返回列表中元素的个数。
 
 - **示例**：
+
   ```python
   len(odds)  # 返回 4，表示列表有四个元素
   ```
@@ -63,11 +63,13 @@ nav_order: 10
 列表在 Python 中支持各种操作，例如相加和重复。
 
 - **列表相加**：使用 `+` 运算符将两个列表合并。
+
   ```python
   [1, 2] + [3, 4]  # 返回 [1, 2, 3, 4]
   ```
 
 - **列表重复**：使用 `*` 运算符重复列表中的元素。
+
   ```python
   [1, 2] * 2  # 返回 [1, 2, 1, 2]
   ```
@@ -77,6 +79,7 @@ nav_order: 10
 列表的元素可以是任何数据类型，甚至是另一个列表。因此，列表可以用来创建更复杂的嵌套结构。
 
 - **示例**：
+
   ```python
   pairs = [[10, 20], [30, 40]]  # 嵌套列表
   print(pairs[1])  # 返回 [30, 40]
@@ -91,6 +94,7 @@ nav_order: 10
 ![image-20240912104343515]({{ site.baseurl }}/docs/assets/image-20240912104343515.png)
 
 - **示例**：
+
   ```python
   digits = [1, 8, 2, 8]
   print(1 in digits)  # True，1 存在于列表中
@@ -99,6 +103,7 @@ nav_order: 10
   ```
 
 - 当列表中的元素本身是列表时，`in` 操作符可以检查列表是否包含另一个列表作为元素。
+
   ```python
   pairs = [[1, 2], [3, 4]]
   print([1, 2] in pairs)  # True，列表 [1, 2] 是 `pairs` 的一个元素
@@ -109,6 +114,7 @@ nav_order: 10
 `for` 循环是遍历序列的常用方法，简化了手动管理索引的过程。与 `while` 循环不同，`for` 循环可以自动遍历序列中的每个元素，减少了出错的几率。
 
 - **示例：计算元素出现的次数**：
+
   ```python
   def count(s, value):
       total = 0
@@ -125,6 +131,7 @@ nav_order: 10
 Python 提供了许多简化操作的语法糖，这些简写使得代码更加简洁。例如，`+=` 操作符是一种常见的语法糖，等效于 `total = total + 1`。类似的操作符还包括 `-=`、`*=`、`/=` 等，这些操作符都可以帮助减少冗长的代码。
 
 - **示例**：
+
   ```python
   total = 0
   total += 1  # 等效于 total = total + 1
@@ -151,6 +158,7 @@ for <name> in <expression>:
 每次循环时，Python 会从 `<expression>` 中提取一个元素赋值给 `<name>`，并执行 `<suite>` 中的代码，直到所有元素都遍历完毕。
 
 - **示例：遍历字符串**
+
   ```python
   for char in "hello":
       print(char)
@@ -180,6 +188,7 @@ for <name> in <expression>:
 对于嵌套列表结构，`for` 循环结合序列解包可以极大简化处理多个层次结构的代码。例如，处理一个包含多个子列表的列表，可以通过解包直接获取子列表中的各个元素。
 
 - **示例：解包嵌套列表中的元素**
+
   ```python
   pairs = [[1, 2], [2, 2], [3, 4]]
   for x, y in pairs:
@@ -203,6 +212,7 @@ for <name> in <expression>:
   - `range()` 是惰性生成的，也就是说，它不会立即生成所有数字，而是在需要时逐步产生。如果需要查看生成的所有数字，可以使用 `list()` 将其转换为列表。
 
 - **示例**：
+
   ```python
   r = range(5, 8)  # 生成从 5 到 7 的数字序列，但尚未实际生成
   print(list(r))   # 输出 [5, 6, 7]
@@ -215,6 +225,7 @@ for <name> in <expression>:
 `range()` 经常用于 `for` 循环中，尤其是在需要固定次数的迭代时，它是最简单直接的选择。通过 `range()`，我们可以非常方便地生成一个指定范围内的数字，并在循环中进行迭代。
 
 - **示例：计算小于某个数字的所有整数之和**：
+
   ```python
   def sum_below(n):
       total = 0
@@ -232,12 +243,14 @@ for <name> in <expression>:
 在某些情况下，我们需要重复执行某个操作多次，但对循环变量本身不感兴趣。为了强调这个变量是多余的，Python 社区通常会使用下划线 `_` 作为变量名。这是一个非常常见的惯例，表示我们不会使用这个变量。
 
 - **示例：重复打印消息**：
+
   ```python
   for _ in range(3):
       print("Go Bears!")
   ```
 
 - **输出**：
+
   ```
   Go Bears!
   Go Bears!
@@ -246,11 +259,9 @@ for <name> in <expression>:
 
 在这里，循环执行了三次，使用 `_` 表明我们并不关心循环中的当前迭代值。
 
-
-
 ## 讲解：求和的迭代与递归实现
 
-### **题目要求**：
+### **题目要求**
 
 1. **迭代求和**：编写一个迭代函数，输入一个正整数 `n`，返回前 `n` 个整数的和。例如，`sum(5)` 应该返回 `1 + 2 + 3 + 4 + 5 = 15`。
 2. **递归求和**：编写一个递归函数，完成相同的任务：求前 `n` 个整数的和。
@@ -284,6 +295,7 @@ print(iterative_sum(5))  # 输出: 15
 ```
 
 **输出结果解释**：
+
 - `iterative_sum(5)` 的执行结果为 15，因为它计算的是 `1 + 2 + 3 + 4 + 5` 的总和。
 
 ### 第二部分：递归解法
@@ -315,6 +327,7 @@ print(recursive_sum(5))  # 输出: 15
 ```
 
 **输出结果解释**：
+
 - `recursive_sum(5)` 通过递归计算出 `5 + 4 + 3 + 2 + 1 + 0` 的总和，结果为 15。
 
 ### 递归过程详解
@@ -329,6 +342,7 @@ print(recursive_sum(5))  # 输出: 15
 6. **基准情况**：`recursive_sum(0)`，结果为 `0`，递归终止。
 
 函数开始返回时，依次将结果逐层返回：
+
 - `recursive_sum(1)` 返回 `1 + 0 = 1`。
 - `recursive_sum(2)` 返回 `2 + 1 = 3`。
 - `recursive_sum(3)` 返回 `3 + 3 = 6`。
@@ -348,8 +362,6 @@ print(recursive_sum(5))  # 输出: 15
    - 缺点：对于大规模递归调用，可能会导致栈溢出（递归深度限制），并且每次递归调用都需要额外的栈空间。
 
 在这道求和的题目中，迭代和递归都能有效解决问题。通过迭代，我们显式地使用循环结构求和；而通过递归，我们可以用分治的思路，将问题逐步简化。两种方法各有优劣，在实际编程中应根据具体情况选择合适的方式。
-
-
 
 ## 列表推导式 (List Comprehensions)
 
@@ -462,8 +474,6 @@ uppercase_letters = [char.upper() for char in "hello world" if char.isalpha()]
 
 通过列表推导式，我们可以轻松地处理和生成列表及字符串。它将循环、条件筛选、表达式计算等简洁地组合在一起，极大地提升了代码的可读性和执行效率。不论是在处理数字、字符串，还是在嵌套结构中应用，列表推导式都是 Python 中不可或缺的利器。
 
-
-
 ## Strings 字符串
 
 ![image-20240912104859538]({{ site.baseurl }}/docs/assets/image-20240912104859538.png)
@@ -475,6 +485,7 @@ uppercase_letters = [char.upper() for char in "hello world" if char.isalpha()]
 
 - **三引号**：用于定义多行字符串，或作为文档字符串（docstrings）使用，特别适合需要换行的文本内容。
   - 示例：
+
     ```python
     """This is a multi-line
     string in Python"""
@@ -485,6 +496,7 @@ uppercase_letters = [char.upper() for char in "hello world" if char.isalpha()]
 1. **字符串作为序列**：字符串与列表类似，是一种序列类型。你可以使用 `len()` 函数获取字符串的长度，并且可以使用索引操作访问其中的特定字符。
 
    - **示例**：
+
      ```python
      city = "Berkeley"
      print(len(city))  # 输出: 8
@@ -496,6 +508,7 @@ uppercase_letters = [char.upper() for char in "hello world" if char.isalpha()]
 
 3. **字符串中的 `in` 操作符**：`in` 操作符不仅能检查元素是否存在于序列中，还可以检查某个子字符串是否存在于另一个字符串中。
    - **示例**：
+
      ```python
      sentence = "Where's Waldo?"
      print("Waldo" in sentence)  # 输出: True
@@ -507,6 +520,7 @@ uppercase_letters = [char.upper() for char in "hello world" if char.isalpha()]
 与列表一样，字符串也支持切片操作，用来获取子串。切片的基本语法是 `string[start:end:step]`，其中 `start` 是起始索引，`end` 是结束索引，`step` 是步长。
 
 - **示例**：
+
   ```python
   name = "Python"
   print(name[1:4])  # 输出 'yth'，从索引 1 到 3（不包含 4）
@@ -522,11 +536,14 @@ Python 提供了许多内置的方法来处理字符串，如 `upper()`、`lower
 
 - **常用方法**：
   - **`upper()` 和 `lower()`**：将字符串转换为大写或小写。
+
     ```python
     print("hello".upper())  # 输出: HELLO
     print("WORLD".lower())  # 输出: world
     ```
+
   - **`replace()`**：将字符串中的某个子串替换为另一个子串。
+
     ```python
     text = "I love Python"
     print(text.replace("love", "like"))  # 输出: I like Python
@@ -542,6 +559,7 @@ Python 字符串支持使用转义序列来表示特殊字符。这些序列通�
   - **`\'`** 和 **`\"`**：分别表示单引号和双引号，用于在字符串中包含引号。
 
 - **示例**：
+
   ```python
   text = "Hello,\nWorld!"
   print(text)
@@ -557,14 +575,13 @@ Python 字符串支持使用转义序列来表示特殊字符。这些序列通�
 Python 中可以使用三引号（`'''` 或 `"""`）来创建多行字符串，这种方式不仅能让字符串跨多行，还可以保留字符串中的格式。通常，三引号也用于函数的文档字符串（docstrings）来描述函数的用途。
 
 - **多行字符串示例**：
+
   ```python
   multiline_string = """This is a 
   multi-line string that spans
   multiple lines."""
   print(multiline_string)
   ```
-
-
 
 ## Reversing a String 字符串反转
 
@@ -625,6 +642,3 @@ print(reverse("hello"))  # 输出: olleh
 ### 优化递归代码
 
 对于较简单的问题，比如字符串反转，不需要特意分出多个基准情况。我们只需检查字符串长度是否小于等于 1，这样可以同时处理空字符串和单字符的情况，简化代码逻辑，减少不必要的条件分支。
-
-
-

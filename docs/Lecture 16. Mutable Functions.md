@@ -2,7 +2,7 @@
 layout: page
 title: L16 Mutable Functions
 permalink: /L16
-description: "Lecture 16. Mutable Functions"
+description: "Lecture 16. Mutable Functions 在这一讲中，我们探讨一个重要的概念：可变函数。可变函数是与可变数据关联的函数，这些数据会随着时间的推移而发生变化。"
 nav_order: 16
 
 
@@ -27,14 +27,14 @@ def make_withdraw(balance):
     return withdraw
 ```
 
-### 关键概念：
+### 关键概念
+
 - **初始余额**：`make_withdraw` 函数接收初始余额作为参数，并创建一个 `withdraw` 函数，该函数能随着取款操作不断修改账户的余额。
 - **`nonlocal` 声明**：为了在闭包中修改外层函数（`make_withdraw`）中的 `balance` 变量，必须使用 `nonlocal` 关键字。
   
-
 ![image-20240914113942874]({{ site.baseurl }}/docs/assets/image-20240914113942874.png)
 
-### 执行流程：
+### 执行流程
 
 1. 调用 `make_withdraw(100)`，创建一个具有初始余额 100 的取款函数 `withdraw`。
 2. 调用 `withdraw(25)`，减少余额并返回 75。
@@ -42,8 +42,6 @@ def make_withdraw(balance):
 4. 如果取款金额超出余额，例如 `withdraw(60)`，函数会返回 "Insufficient funds"（余额不足）。
 
 通过这种方式，`withdraw` 函数模拟了一个随时间推移余额会发生变化的银行账户。
-
-
 
 ## 环境图与变量作用域
 
@@ -54,12 +52,11 @@ def make_withdraw(balance):
 ### 环境图解释
 
 环境图用于帮助我们理解变量在不同作用域中的绑定与修改：
+
 1. 当 `make_withdraw` 被调用时，会创建一个新帧，`balance` 在该帧中绑定为初始余额。
 2. 调用 `withdraw` 时，会创建一个新的帧，该帧的父帧是 `make_withdraw` 的帧。
 3. `nonlocal balance` 使得 `withdraw` 可以修改父帧中的 `balance`，从而更新余额。
 4. 余额的改变在父帧中生效，因此后续的 `withdraw` 调用将基于更新后的余额进行计算。
-
-
 
 ## 非本地赋值（`nonlocal`）
 
@@ -76,6 +73,7 @@ nonlocal balance
 ### 1. `nonlocal` 的语法
 
 语法形式为：
+
 ```python
 nonlocal <name>, <name>, ...
 ```
@@ -85,8 +83,8 @@ nonlocal <name>, <name>, ...
 - **作用**：当使用 `nonlocal` 声明变量时，后续对该变量的赋值会修改其在第一个非局部环境中的绑定。
 - **解释**：当一个变量通过 `nonlocal` 声明后，后续对该变量的赋值会影响到其在外围函数（即“包围的作用域”或“enclosing scope”）中的值，而不是创建或修改当前函数中的局部变量。
   
-
 例如：
+
 ```python
 def outer():
     x = 10
@@ -96,6 +94,7 @@ def outer():
     inner()
     print(x)  # 输出 20
 ```
+
 在这里，`nonlocal` 用来修改外层函数 `outer()` 中的变量 `x`。
 
 ### 3. 注意
@@ -122,6 +121,7 @@ UnboundLocalError: local variable 'balance' referenced before assignment
 ```
 
 **错误的原因**：
+
 - 代码的设计意图是通过 `withdraw` 函数不断减少 `balance`，但在 Python 中，局部作用域中的赋值操作会将变量视为局部变量。因为 `balance` 在 `withdraw` 中被赋值（`balance = balance - amount`），Python 会认为 `balance` 是 `withdraw` 函数内的局部变量。
 - 这会导致在 `balance = balance - amount` 执行之前，Python 试图引用尚未赋值的局部变量 `balance`，因此抛出 `UnboundLocalError` 错误。
 
@@ -130,6 +130,7 @@ UnboundLocalError: local variable 'balance' referenced before assignment
 - 使用 **`nonlocal`** 语句，将 `balance` 绑定到外部作用域（即 `make_withdraw` 的局部作用域）中的 `balance` 变量，而不是创建一个新的局部变量。
 
 正确的代码示例：
+
 ```python
 def make_withdraw(balance):
     def withdraw(amount):
@@ -187,10 +188,6 @@ def make_withdraw_list(balance):
 
 这种方法避免了 `nonlocal` 声明的需求，但需要注意的是，使用可变对象可能带来意外的副作用，尤其是在处理并发或复杂的数据结构时。
 
-
-
-
-
 ## 赋值语句的多种含义
 
 ![image-20240914140948768]({{ site.baseurl }}/docs/assets/image-20240914140948768.png)
@@ -229,8 +226,6 @@ def make_withdraw_list(balance):
 - **效果**：抛出 `SyntaxError`，因为 `nonlocal` 语句不能和局部变量冲突。
 
 `nonlocal` 声明的变量名不能与局部变量相同，否则会引发冲突并导致语法错误。
-
-
 
 ## **局部状态与多个可变函数**
 
@@ -302,10 +297,10 @@ result_2 = b(4)  # 再次调用 h(4)
 
 在设计程序时，理解引用透明性和局部状态的影响对于编写稳定且可预测的代码非常重要。
 
-
-
 ## **Review Problem Tree Recursion 问题**
+
 最后，课程推荐了一个递归问题 **Combo**，要求构建一个最小的整数，包含两个整数的所有数字。这个问题涉及 **树形递归** 的概念，需要通过递归寻找所有可能的组合，并选择最佳的解决方案。递归问题通常会有以下几个特点：
+
 - **基准情况**：即简单到可以直接返回结果的情况。
 - **递归情况**：需要通过递归调用来解决更复杂的问题。
 
@@ -316,21 +311,18 @@ result_2 = b(4)  # 再次调用 h(4)
 
 这个问题是典型的 **树形递归**（Tree Recursion）问题。树形递归意味着在递归的过程中，函数可能会从一个节点分支出多个递归调用，从而形成一个递归树。每个分支表示一种可能的组合。
 
-
-
 <details markdown="block">
 <summary>思路和代码 (Click me after thinking!)</summary>
 
-
 ### **递归思路**
 
-### 1. **基准情况**：
+### 1. **基准情况**
 
 这是解决递归问题时首先要考虑的简单情况。如果我们发现其中一个数字已经用完了，那么只需要把剩下的另一个数字拼接到结果中即可。
 
 - **基准情况**：当 `a` 或 `b` 中的数字全部用完时，直接将另一个数字剩余的部分附加到结果中。
 
-### 2. **递归情况**：
+### 2. **递归情况**
 
 在递归情况中，需要递归地选择两个整数的第一个数字，将其添加到结果中。我们有两个选择：
 
@@ -398,7 +390,7 @@ def combo(a, b):
         return int(str_b[0] + str(combo(a, int(str_b[1:]))))
 ```
 
-### **解释**：
+### **解释**
 
 1. **基准情况**：如果 `a` 为 0（意味着 `a` 的所有数字已经被使用），直接返回 `b`，反之亦然。
 2. **递归部分**：
@@ -406,23 +398,20 @@ def combo(a, b):
    - 选择较小的那个字符作为结果的第一个字符，并递归地处理剩余的字符组合。
 3. **最终结果**：通过递归，将每个子问题的结果组合起来，返回整个拼接后的最小数字。
 
-### **示例**：
+### **示例**
 
 ```python
 print(combo(123, 456))  # 输出 123456
 print(combo(56, 1234))  # 输出 123456
 ```
 
-### **复杂度分析**：
+### **复杂度分析**
 
 - **时间复杂度**：由于树形递归的性质，每次都有两个递归调用，因此时间复杂度近似为 O(2^n)，其中 `n` 是 `a` 和 `b` 的数字长度之和。
 - **空间复杂度**：递归的深度为 `n`，因此空间复杂度为 O(n)。
 
 </details>
 
-
-
-### **总结**：
+### **总结**
 
 这个问题展示了树形递归的应用，通过递归地生成所有可能的组合，然后选择最小的那个结果。递归过程中，基准情况负责处理最简单的子问题，而递归情况负责将更复杂的问题分解为多个更小的子问题。
-
